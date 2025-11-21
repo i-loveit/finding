@@ -1,15 +1,16 @@
-/* 차콜/다크 그린 테마 */
+/* 수정된 차콜/다크 그린 테마 및 폰트, 버튼 레이아웃 */
 :root {
     --color-charcoal: #2a2a2a; /* 기본 배경 색상 */
-    --color-dark-green: #38761d; /* 포인트 색상 */
-    --color-light-green: #6aa84f; /* 호버 색상 */
+    --color-dark-green: #1a430c; /* 더 어두운 다크 그린 (포인트 색상) */
+    --color-light-green: #38761d; /* 호버 색상 */
     --color-text-light: #f0f0f0; /* 밝은 텍스트 */
     --color-text-medium: #bbb; /* 중간 텍스트 */
     --color-surface: #3c3c3c; /* 본문 배경 */
 }
 
 body {
-    font-family: 'Malgun Gothic', '맑은 고딕', sans-serif;
+    /* 폰트 변경 (영문: Segoe UI, 한글: Noto Sans 또는 다른 기본 폰트) */
+    font-family: 'Segoe UI', 'Noto Sans KR', sans-serif; 
     margin: 0;
     padding: 0;
     background-color: var(--color-charcoal);
@@ -24,7 +25,7 @@ header {
     color: white;
     padding: 30px 0;
     text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* 그림자 진하게 */
 }
 
 header h1 {
@@ -35,7 +36,7 @@ header h1 {
 
 /* 메인 컨테이너 */
 main {
-    max-width: 800px;
+    max-width: 600px; /* 버튼이 한 줄에 하나씩 잘 보이도록 너비 조정 */
     margin: 40px auto;
     padding: 20px;
 }
@@ -48,12 +49,13 @@ main {
     color: var(--color-text-medium);
 }
 
-/* 버튼 컨테이너 */
+/* 버튼 컨테이너 - 세로 정렬을 위해 flex-direction: column 적용 */
 .button-container {
     display: flex;
-    flex-wrap: wrap; /* 버튼이 많아지면 줄 바꿈 */
+    flex-direction: column; /* 세로 정렬 */
     justify-content: center;
-    gap: 15px;
+    align-items: center; /* 가운데 정렬 */
+    gap: 15px; /* 버튼 사이 간격 */
     margin-bottom: 50px;
 }
 
@@ -62,13 +64,14 @@ main {
     background-color: var(--color-dark-green);
     color: white;
     border: none;
-    padding: 12px 25px;
-    font-size: 1.1em;
+    padding: 15px 30px; /* 버튼 크기 키움 */
+    font-size: 1.2em; /* 폰트 크기 키움 */
     cursor: pointer;
     border-radius: 5px;
     transition: background-color 0.3s, transform 0.1s;
-    flex-basis: 45%; /* 두 개씩 배치하기 위해 */
-    max-width: 250px;
+    width: 100%; /* 컨테이너 너비 전체 사용 */
+    max-width: 400px; /* 최대 너비 설정 */
+    text-align: left; /* 텍스트 왼쪽 정렬 */
 }
 
 .toggle-button:hover {
@@ -76,26 +79,26 @@ main {
     transform: translateY(-2px);
 }
 
-/* 섹션 내용 스타일 (초기에는 숨김) */
+/* 섹션 내용 스타일 (기존과 동일) */
 .content-section {
     background-color: var(--color-surface);
     padding: 25px;
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
     margin-top: 20px;
-    overflow: hidden; /* 슬라이드 효과를 위해 중요 */
-    max-height: 0; /* 초기 높이는 0으로 설정하여 숨김 */
+    overflow: hidden; 
+    max-height: 0; 
     opacity: 0;
     transition: max-height 0.7s ease-in-out, opacity 0.5s ease;
 }
 
 .content-section.open {
-    max-height: 2000px; /* 충분히 큰 값으로 설정하여 내용이 다 보이게 함 */
+    max-height: 2000px; 
     opacity: 1;
 }
 
 .content-section h2 {
-    color: var(--color-dark-green);
+    color: var(--color-dark-green); /* H2 색상은 기존대로 유지 */
     border-bottom: 2px solid var(--color-dark-green);
     padding-bottom: 10px;
     margin-top: 0;
@@ -103,7 +106,7 @@ main {
 
 /* 리스트 및 인용구 스타일 */
 ul {
-    list-style-type: none; /* 기본 점 목록 제거 */
+    list-style-type: none; 
     padding-left: 0;
 }
 ul li {
@@ -123,13 +126,23 @@ blockquote {
     display: flex;
     gap: 30px;
     margin-bottom: 20px;
+    flex-wrap: wrap; /* 작은 화면에서 줄바꿈 */
 }
 .member {
     flex: 1;
+    min-width: 200px; /* 작은 화면에서도 내용이 보장되도록 */
     padding: 15px;
     border: 1px dashed #555;
     border-radius: 5px;
 }
 .member h3 {
     color: var(--color-light-green);
+}
+
+/* 푸터 스타일 */
+footer {
+    text-align: center;
+    padding: 20px;
+    color: #555; /* 어두운 배경에 맞게 색상 조정 */
+    font-size: 0.9em;
 }
