@@ -1,91 +1,111 @@
-/* 수정된 차콜/다크 그린 테마 및 폰트, 버튼 레이아웃 */
+/* 최종 디자인: D/s Partnership Invitation 스타일 */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap'); /* 세리프 폰트 임포트 */
+
 :root {
-    --color-charcoal: #2a2a2a; /* 기본 배경 색상 */
-    --color-dark-green: #1a430c; /* 더 어두운 다크 그린 (포인트 색상) */
-    --color-light-green: #38761d; /* 호버 색상 */
-    --color-text-light: #f0f0f0; /* 밝은 텍스트 */
-    --color-text-medium: #bbb; /* 중간 텍스트 */
-    --color-surface: #3c3c3c; /* 본문 배경 */
+    --color-background: #1c1c1c; /* 배경 (거의 블랙) */
+    --color-surface: #252525; /* 본문 배경 */
+    --color-accent: #b8b8b8; /* 포인트 및 구분선 (밝은 회색) */
+    --color-text-main: #e8e8e8; /* 메인 텍스트 */
+    --color-text-secondary: #aaaaaa; /* 부제 및 보조 텍스트 */
 }
 
 body {
-    /* 폰트 변경 (영문: Segoe UI, 한글: Noto Sans 또는 다른 기본 폰트) */
-    font-family: 'Segoe UI', 'Noto Sans KR', sans-serif; 
+    font-family: 'Noto Sans KR', sans-serif; /* 한글 폰트 */
     margin: 0;
     padding: 0;
-    background-color: var(--color-charcoal);
-    color: var(--color-text-light);
+    background-color: var(--color-background);
+    color: var(--color-text-main);
     line-height: 1.6;
-    transition: background-color 0.3s;
 }
 
-/* 헤더 스타일 */
+/* 헤더: 메인 제목 및 아이콘 */
 header {
-    background-color: var(--color-dark-green);
-    color: white;
-    padding: 30px 0;
+    background-color: var(--color-background);
+    color: var(--color-text-main);
+    padding: 50px 0 20px 0;
     text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* 그림자 진하게 */
+}
+
+/* 상단 아이콘 (저울 모양) */
+#scale-icon {
+    font-family: 'Arial', sans-serif;
+    font-size: 2.5em;
+    color: var(--color-accent);
+    margin-bottom: 10px;
+    display: inline-block;
+    line-height: 0.5;
 }
 
 header h1 {
-    margin: 0;
-    font-size: 2.5em;
-    letter-spacing: 2px;
+    font-family: 'Playfair Display', serif; /* 세리프 폰트 적용 */
+    font-weight: 700;
+    font-size: 3em;
+    margin: 5px 0;
+    letter-spacing: 1px;
+}
+header p {
+    color: var(--color-text-secondary);
+    font-size: 0.9em;
+    margin-top: 10px;
+    padding: 0 20px;
 }
 
 /* 메인 컨테이너 */
 main {
-    max-width: 600px; /* 버튼이 한 줄에 하나씩 잘 보이도록 너비 조정 */
+    max-width: 500px;
     margin: 40px auto;
     padding: 20px;
 }
 
-/* 환영의 글 스타일 */
-#welcome p {
-    text-align: center;
-    font-size: 1.1em;
-    margin: 30px 0 50px 0;
-    color: var(--color-text-medium);
-}
-
-/* 버튼 컨테이너 - 세로 정렬을 위해 flex-direction: column 적용 */
-.button-container {
-    display: flex;
-    flex-direction: column; /* 세로 정렬 */
-    justify-content: center;
-    align-items: center; /* 가운데 정렬 */
-    gap: 15px; /* 버튼 사이 간격 */
-    margin-bottom: 50px;
-}
-
-/* 버튼 스타일 */
-.toggle-button {
-    background-color: var(--color-dark-green);
-    color: white;
-    border: none;
-    padding: 15px 30px; /* 버튼 크기 키움 */
-    font-size: 1.2em; /* 폰트 크기 키움 */
+/* 버튼 대신 섹션 제목 스타일: 이미지와 같이 상하 구분선 추가 */
+.section-title-container {
     cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.3s, transform 0.1s;
-    width: 100%; /* 컨테이너 너비 전체 사용 */
-    max-width: 400px; /* 최대 너비 설정 */
-    text-align: left; /* 텍스트 왼쪽 정렬 */
+    padding: 20px 0;
+    border-top: 1px solid var(--color-accent); /* 상단 구분선 */
+    border-bottom: 1px solid var(--color-accent); /* 하단 구분선 */
+    margin-top: 25px; /* 섹션 간격 */
+    transition: background-color 0.3s;
 }
 
-.toggle-button:hover {
-    background-color: var(--color-light-green);
-    transform: translateY(-2px);
+.section-title-container:hover {
+    background-color: #333333; /* 마우스 오버 시 미세한 배경 변화 */
 }
 
-/* 섹션 내용 스타일 (기존과 동일) */
+.section-title-container h2 {
+    font-size: 1.5em;
+    font-weight: 400;
+    margin: 0;
+    color: var(--color-text-main);
+}
+
+/* "▽ 자세히 보기" 스타일 */
+.toggle-link {
+    color: var(--color-accent);
+    font-size: 0.9em;
+    margin-top: 5px;
+    display: flex;
+    align-items: center;
+    transition: color 0.3s;
+}
+
+.toggle-icon {
+    margin-right: 5px;
+    font-size: 1em;
+    transition: transform 0.3s;
+}
+/* 섹션이 열렸을 때 아이콘 회전 */
+.section-title-container.open .toggle-icon {
+    transform: rotate(180deg);
+}
+
+
+/* 섹션 내용 스타일 (초기에는 숨김) */
 .content-section {
     background-color: var(--color-surface);
     padding: 25px;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-    margin-top: 20px;
+    border-radius: 0; /* 모서리 제거 */
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
+    margin-top: -1px; 
     overflow: hidden; 
     max-height: 0; 
     opacity: 0;
@@ -93,32 +113,35 @@ main {
 }
 
 .content-section.open {
-    max-height: 2000px; 
+    max-height: 3000px; 
     opacity: 1;
 }
 
-.content-section h2 {
-    color: var(--color-dark-green); /* H2 색상은 기존대로 유지 */
-    border-bottom: 2px solid var(--color-dark-green);
-    padding-bottom: 10px;
-    margin-top: 0;
+.content-section h3 {
+    color: var(--color-accent);
+    border-bottom: 1px solid #444;
+    padding-bottom: 5px;
+    margin-top: 15px;
 }
 
 /* 리스트 및 인용구 스타일 */
 ul {
-    list-style-type: none; 
+    list-style-type: none;
     padding-left: 0;
+    margin-left: 10px;
+    border-left: 2px solid var(--color-accent);
 }
 ul li {
-    padding: 5px 0;
-    border-bottom: 1px dotted #444;
+    padding: 5px 10px;
+    border-bottom: none;
+    font-size: 0.95em;
 }
 
 blockquote {
-    border-left: 4px solid var(--color-light-green);
+    border-left: 4px solid var(--color-accent);
     padding-left: 15px;
-    background-color: #4a4a4a;
-    color: var(--color-text-light);
+    background-color: #2b2b2b;
+    color: var(--color-text-secondary);
 }
 
 /* 구성원 소개 레이아웃 */
@@ -126,23 +149,23 @@ blockquote {
     display: flex;
     gap: 30px;
     margin-bottom: 20px;
-    flex-wrap: wrap; /* 작은 화면에서 줄바꿈 */
+    flex-wrap: wrap; 
 }
 .member {
     flex: 1;
-    min-width: 200px; /* 작은 화면에서도 내용이 보장되도록 */
+    min-width: 200px; 
     padding: 15px;
-    border: 1px dashed #555;
+    border: 1px solid #444;
     border-radius: 5px;
 }
 .member h3 {
-    color: var(--color-light-green);
+    color: var(--color-accent);
 }
 
 /* 푸터 스타일 */
 footer {
     text-align: center;
-    padding: 20px;
-    color: #555; /* 어두운 배경에 맞게 색상 조정 */
-    font-size: 0.9em;
+    padding: 30px;
+    color: #444; 
+    font-size: 0.8em;
 }
