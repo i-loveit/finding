@@ -3,22 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>i-loveit님의 구인 공고: 장기적·안정적 관계 구축</title>
+    <title>Finding Our New Mate</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <h1>장기적·안정적 지배 관계를 함께 구축할 분을 찾습니다.</h1>
+        <h1>Finding Our New Mate</h1>
     </header>
     
     <main>
         <section id="welcome">
-            <h2>✨ 환영의 글</h2>
-            <p>이 글을 읽고 계신다는 것은 저희와 함께할 가능성을 열어두셨다는 의미이겠지요. 저희가 아는 분이든, 아니든 당신의 관심과 접근을 진심으로 환영합니다.</p>
-            <p>부디 마음이 맞는 사람이길 바라며 아래의 설명들을 편안히 읽어주셨음 좋겠습니다. 글로 표현할 수 있는 한 솔직하게 저희를 담아내고자 했습니다.</p>
+            <p>이 글을 읽고 계신다는 것은 저희와 함께할 가능성을 열어두셨다는 의미이겠지요. 저희가 아는 분이든, 아니든 당신의 관심과 접근을 진심으로 환영합니다.<br>부디 마음이 맞는 사람이길 바라며 아래의 설명들을 편안히 읽어주셨음 좋겠습니다. 글로 표현할 수 있는 한 솔직하게 저희를 담아내고자 했습니다.</p>
         </section>
 
-        <section id="us-intro">
+        <div class="button-container">
+            <button class="toggle-button" data-target="us-intro">👥 구성원 소개</button>
+            <button class="toggle-button" data-target="you-requirements">❓ 필수/권장 사항</button>
+            <button class="toggle-button" data-target="us-goal">🤝 관계 지향점</button>
+            <button class="toggle-button" data-target="application">💌 지원 방법</button>
+        </div>
+        
+        <section id="us-intro" class="content-section">
             <h2>👥 구성원 소개</h2>
             <div class="member-list">
                 <div class="member">
@@ -43,13 +48,13 @@
                 </div>
             </div>
             
-            <blockquote style="border-left: 4px solid #ffc107; padding-left: 15px; background-color: #fff9e6;">
+            <blockquote>
                 **참고 사항**<br>
                 환타와 러비 모두 정신 질환을 앓고 있습니다. 자세한 내용은 알려드리기 섣부르나, 혹시 정신 질환에 대해 부정적이거나 편견을 갖고 계시다면 함께 지내기 어려울 것으로 사료됩니다.
             </blockquote>
         </section>
 
-        <section id="you-requirements">
+        <section id="you-requirements" class="content-section">
             <h2>❓ 당신 (YOU)</h2>
             
             <h3>[필수 사항]</h3>
@@ -74,7 +79,7 @@
             </ul>
         </section>
 
-        <section id="us-goal">
+        <section id="us-goal" class="content-section">
             <h2>🤝 관계 지향점 (US)</h2>
             <p>최종적으로 **폴리피델리티 관계**를 지향합니다. 지향하는 세 명의 관계는 주인이란 대전제 안에 두 서브가 속하는 관계도입니다.</p>
             <ul>
@@ -85,15 +90,17 @@
             <p>마스터 - 슬레이브 관계이지만, 주인은 언제나 귀가 열려 있습니다. 당신이 주인의 자랑이고, 당신에게 주인은 세상 그 자체일테니까요. 상호 피드백이 안되는 관계성은 아니니 너무 겁먹진 않았음 좋겠습니다.</p>
         </section>
 
-        <section id="application">
+        <section id="application" class="content-section">
             <h2>💌 지원 방법</h2>
             <p>간단한 자기소개와 함께 자신의 실물과 가장 닮은 **셀카 한 장**을 보내주시면 감사하겠습니다.</p>
             <p>만약 마음에 든다면 저희 얼굴 사진도 보내드릴 예정입니다. 사진은 저장하지 않을 뿐더러, 누구보다 유출에 예민합니다.</p>
             <p>충분한 대화와 의사소통 이후에 서로가 원한다는 확신이 생기면 그때부터 천천히 당신을 지배할 것입니다. 사소한 것 하나부터 인생 전반을 뒤흔들 내용까지요.</p>
             
-            <p style="text-align: center; margin-top: 30px; font-weight: bold; font-size: 1.2em; color: #dc3545;">
-                👉 지원/문의는 이메일, DM 등 어떤 경로로 받으시나요? 해당 연락처를 알려주시면 여기에 명시해 드리겠습니다.
-            </p>
+            <div style="text-align: center; margin-top: 30px; padding: 15px; border: 1px dashed var(--color-light-green); border-radius: 5px; background-color: #4a4a4a;">
+                <p style="font-weight: bold; font-size: 1.2em; color: white; margin-bottom: 10px;">
+                    👉 지원/문의 연락처: **[여기에 연락 수단을 입력해 주세요]**
+                </p>
+            </div>
         </section>
 
     </main>
@@ -102,19 +109,6 @@
         <p>&copy; 2025 i-loveit의 개인 구인 페이지</p>
     </footer>
 
-    <style>
-        /* 구성원 소개 섹션의 레이아웃을 위해 추가 */
-        .member-list {
-            display: flex;
-            gap: 30px;
-            margin-bottom: 20px;
-        }
-        .member {
-            flex: 1;
-            padding: 15px;
-            border: 1px dashed #ccc;
-            border-radius: 5px;
-        }
-    </style>
+    <script src="script.js"></script>
 </body>
 </html>
